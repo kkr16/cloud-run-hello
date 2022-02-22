@@ -15,6 +15,8 @@
 package main
 
 import (
+	"fmt"
+	"time"
 	"context"
 	"encoding/base64"
 	"encoding/json"
@@ -96,6 +98,7 @@ func getEventsHandler() *cloudeventsClient.EventReceiver {
 }
 
 func main() {
+	time.Sleep(60 * time.Second)
 	tmpl := template.Must(template.ParseFiles("index.html"))
 
 	// Get project ID from metadata server
